@@ -2,7 +2,7 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn keyword vmKW write read push pair swap gc assert_allocated print pop halt die
+syn keyword vmKW out in push pair swap gc assert_allocated print pop halt die
 syn region vmString start=+"+ end=+"+
 syn match vmConstant "\<\d\+\>"
 syn match vmConstant "\<0x\x+\>"
