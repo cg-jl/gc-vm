@@ -282,7 +282,7 @@ void interpret(VM *vm, const Instruction *i) {
     gc(vm);
     break;
   case I_ASSERT:
-    assert(vm->num_objects == i->assert.expected, i->assert.msg);
+    assert(vm->num_objects == i->assert.expected, "%s", i->assert.msg);
     break;
   }
 }
@@ -299,7 +299,7 @@ void _run(VM *vm, FILE *fp) {
 
 void run(const char *filename) {
   FILE *fp = filename == NULL ? stdin : fopen(filename, "rb");
-  assert(fp != NULL, strerror(errno));
+  assert(fp != NULL, "%s", strerror(errno));
 
   VM *vm = newVM();
   _run(vm, fp);
