@@ -1,0 +1,12 @@
+; vim:ft=vm
+print "Performance test"
+%repeat 1000
+%repeat 20 i
+push i
+%end
+
+%repeat 20
+pop
+%end
+
+%end

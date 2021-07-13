@@ -1,0 +1,12 @@
+; vim:ft=vm
+print "Test 3: Reach nested objects."
+push 1
+push 2
+pair
+push 3
+push 4
+pair
+pair
+gc
+assert_allocated 7 "Should have reached objects."
+halt

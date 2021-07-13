@@ -1,0 +1,9 @@
+; vim:ft=vm
+print "Test 2: Unreached objects are collected."
+push 1
+push 2
+pop
+pop
+gc
+assert_allocated 0 "Should have collected objects."
+halt

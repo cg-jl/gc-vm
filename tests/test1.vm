@@ -1,0 +1,7 @@
+; vim:ft=vm
+print "Test 1: Objects on stack are preserved"
+push 1
+push 2
+gc
+assert_allocated 2 "Should have preserved objects."
+halt

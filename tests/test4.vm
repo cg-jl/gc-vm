@@ -1,0 +1,6 @@
+; vim:ft=vm
+print "Test 4: Handle cycles"
+push 1
+push 2
+; I haven't found a way to do this yet.
+die "Haven't found a way to create cycles yet. It may not be even possible"
